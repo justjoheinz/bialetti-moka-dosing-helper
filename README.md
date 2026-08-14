@@ -35,8 +35,8 @@ is the bearing.
 | Dimension | Value |
 |---|---|
 | Boiler rim slip-over Ø | 51.0 mm |
-| Skirt bore (rim + clearance) | 51.4 mm |
-| Body outer Ø | 56.2 mm |
+| Skirt bore (rim + clearance) | 52.4 mm |
+| Body outer Ø | 57.2 mm |
 | Filter funnel level Ø | 45.0 mm |
 | Blade helix twist | 200° |
 
@@ -50,7 +50,9 @@ edit the `[Moka fit]` and `[Blade]` parameter blocks. Key parameters:
 
 - `boiler_top_d` — outer diameter the helper slips over (**the critical fit**)
 - `funnel_rim_d` — filter funnel rim / coffee-level diameter
-- `clr` — slip/rotate clearance on the rim
+- `rim_clr` — slip/rotate clearance added to the rim Ø (loosen the fit here)
+- `clr` — general print clearance (pour-cup bore / blade sweep gap)
+- `blade_w` — helix ribbon thickness
 - `blade_twist` — helix wrap in degrees (more = steeper auger)
 
 Render / export from the command line:

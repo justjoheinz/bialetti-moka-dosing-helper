@@ -27,15 +27,16 @@ boiler_top_d = 51.0;   // outer diameter of the boiler top the helper slips over
 funnel_rim_d = 45.0;   // filter-funnel rim diameter (the coffee-level circle)
 
 /* [Fit & print tolerances] */
-clr   = 0.40;   // slip/rotate clearance on the rim
-wall  = 2.40;   // wall thickness
+rim_clr = 1.40;   // slip/rotate clearance on the rim (test print too snug: +1mm on Ø)
+clr     = 0.40;   // general print clearance (pour-cup bore / blade sweep gap)
+wall    = 2.40;   // wall thickness
 
 /* [Proportions] */
 skirt_h  = 10.0;   // depth the skirt grips down over the boiler rim
 cup_h    = 12.0;   // height of the upper pour cup / blade section
 
 /* [Blade — helical scoop screw] */
-blade_w     = 3.0;    // tangential thickness of the flight ribbon
+blade_w     = 3.4;    // tangential thickness of the flight ribbon (+0.4mm: was too thin)
 blade_twist = 200;    // degrees of helix (screw pitch / chirality); more = steeper
 hub_r       = 4.5;    // central hub radius (blade roots here; pour around it)
 grip_teeth  = 30;     // knurl teeth around the body for grip
@@ -46,7 +47,7 @@ $fn = 160;
 // -----------------------------------------------------------------------------
 //  Derived geometry  (datum: screed plane z = 0 = boiler-rim / coffee level)
 // -----------------------------------------------------------------------------
-skirt_bore = boiler_top_d + clr;          // slips over & rotates on the rim
+skirt_bore = boiler_top_d + rim_clr;      // slips over & rotates on the rim
 body_od    = skirt_bore + 2*wall;
 funnel_r   = funnel_rim_d/2;
 cup_ir     = funnel_r + clr;              // upper pour-cup bore (leaves funnel open)
