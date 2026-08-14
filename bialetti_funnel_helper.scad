@@ -39,6 +39,7 @@ cup_h    = 12.0;   // height of the upper pour cup / blade section
 blade_w     = 3.4;    // tangential thickness of the flight ribbon (+0.4mm: was too thin)
 blade_twist = 160;    // degrees of helix over cup_h. FEWER deg = steeper pitch + better self-support
 hub_r       = 4.5;    // central hub radius (blade roots here; pour around it)
+blade_root  = 1.5;    // how far the blade inner edge reaches INTO the hub (secure weld)
 grip_teeth  = 30;     // knurl teeth around the body for grip
 
 /* [Quality] */
@@ -64,9 +65,12 @@ eps = 0.02;
 //  face augers excess up. Full height so its edge reaches the bed when printed.
 // -----------------------------------------------------------------------------
 module blade() {
+    // Inner edge starts blade_root INSIDE the hub so the ribbon is embedded in
+    // the tower (a solid weld) rather than merely touching its surface.
+    inner_r = hub_r - blade_root;
     linear_extrude(height = cup_h, twist = blade_twist, slices = 80, convexity = 10)
-        translate([hub_r, -blade_w/2])
-            square([blade_or - hub_r, blade_w]);
+        translate([inner_r, -blade_w/2])
+            square([blade_or - inner_r, blade_w]);
 }
 
 // =============================================================================
