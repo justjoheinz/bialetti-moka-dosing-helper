@@ -1,0 +1,9 @@
+# OpenSCAD
+*.bak
+*.scad~
+
+# Intermediate render output (keep preview.png and the release STL)
+out_*.png
+
+# OS cruft
+.DS_Store
