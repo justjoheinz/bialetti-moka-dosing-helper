@@ -52,7 +52,7 @@ skirt_bore = boiler_top_d + rim_clr;      // slips over & rotates on the rim
 body_od    = skirt_bore + 2*wall;
 funnel_r   = funnel_rim_d/2;
 cup_ir     = funnel_r + clr;              // upper pour-cup bore (leaves funnel open)
-blade_or   = cup_ir;                      // flight welds into the cup wall
+blade_or   = cup_ir + blade_root;         // flight reaches INTO the cup wall (secure weld)
 eps = 0.02;
 
 // The shoulder between cup_ir and skirt_bore/2 (at z=0) is what the boiler rim
