@@ -37,7 +37,7 @@ cup_h    = 12.0;   // height of the upper pour cup / blade section
 
 /* [Blade — helical scoop screw] */
 blade_w     = 3.4;    // tangential thickness of the flight ribbon (+0.4mm: was too thin)
-blade_twist = 200;    // degrees of helix (screw pitch / chirality); more = steeper
+blade_twist = 160;    // degrees of helix over cup_h. FEWER deg = steeper pitch + better self-support
 hub_r       = 4.5;    // central hub radius (blade roots here; pour around it)
 grip_teeth  = 30;     // knurl teeth around the body for grip
 
